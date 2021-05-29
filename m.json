@@ -1,0 +1,43 @@
+[
+    {
+        "info": "",
+        "listItem": ".get(div.myui-panel_bd>ul>li)",
+        "listItemMsg": ".get(span).i(1)",
+        "listItemName": ".get(a).a(title)",
+        "listItemPic": ".get(a).a(data-original)",
+        "listItemUrl": ".get(a).href()",
+        "name": "麻花",
+        "playListItem": ".get(ul>li)",
+        "playListItemName": ".get(a).t()",
+        "playListItemUrl": ".get(a).href()",
+        "playSort": ".get(div.tab-content > div)",
+        "playSortName": "",
+        "sign": "72dc8279d6b677a772345b05514f1f4d",
+        "type": 0,
+        "url": "电影=https://www.mahua110.com/type/movie-#PN#.html\n\n电视=https://www.mahua110.com/type/tv-#PN#.html\n\n动漫=https://www.mahua110.com/type/dongman-#PN#.html\n",
+        "urlData": "",
+        "version": 0
+    },
+{
+	"info": "",
+	"listItem": ".get(ul.am-avg-sm-3.am-avg-md-4.am-avg-lg-7.am-thumbnails li)",
+	"listItemMsg": ".get(p.star).t()",
+	"listItemName": ".get(p.title).t()",
+	"listItemPic": ".get(img).a(data-original)",
+	"listItemUrl": ".get(a).href()",
+	"name": "牛逼影视",
+	"playListItem": ".get(button.am-btn.am-btn-sm.btn-play-source)",
+	"playListItemName": ".get(button.am-btn.am-btn-sm.btn-play-source).t()",
+	"playListItemUrl": ".c(https://vip.52jiexi.top/?url\u003d).get(button.am-btn.am-btn-sm.btn-play-source).a(data-url)",
+	"playSort": "",
+	"playSortName": "",
+	"putjs": "var data \u003d document.body.innerHTML;\nvar dizhi \u003d data.match(/\"url\":\"(.*?)\"/)[1];\nurl \u003d dizhi.replace(/\\\\/g, \u0027\u0027);\nurl \u003d url.replace(\u0027\u0026amp;\u0027, \u0027\u0026\u0027);\nvar iframe \u003d document.createElement(\u0027video\u0027);\niframe.src \u003d url;\ndocument.write(iframe);",
+	"screen": "分类+电视剧\u003dtv+电影\u003dmovie+综艺\u003dvariety+动漫\u003dcartoon",
+	"sign": "f9808176b88587398d72f60461b43424",
+	"type": 0,
+	"url": "https://v.lree.cn/分类.html?cat\u003dall\u0026area\u003dall\u0026year\u003dall\u0026act\u003dall\u0026rank\u003drankhot\u0026pageno\u003d#PN#",
+	"urlData": "",
+	"version": 0,
+	"xplayurl_regex": "^https://sf3-ttcdn-tos.pstatp.com/obj/[a-zA-Z0-9/_-]+$\n"
+}
+]

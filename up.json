@@ -1,0 +1,9 @@
+{
+    "version_name": "2.0.2",
+    "version_code": 202,
+    "update_title": "发现新版本！",
+    "update_content": "1.修复VIP模块资源\n2.优化资源播放卡顿,修复蓝光播放\n3.修复1.3.1版本插件闪退 \n4.搜索模块新增电视台等检索\n\n\n\n",
+    "update_url": "https://gitee.com/foxnick/apkup/raw/master/Movie_2.0.2_release_202_jiagu_sign.apk",
+    "update_apk_size": "18.4m",
+    "update_constraint": true
+}
