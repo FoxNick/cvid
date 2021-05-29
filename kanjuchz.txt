@@ -1,0 +1,117 @@
+var 上级地址=getVar("url");
+    if(上级地址.indexOf("api.php/app")!=-1){
+        var 分类=getVar("源码").match(/\{"name".*?\}/g);
+        var res={};var items=[];
+        for(var i=0;i<分类.length;i++){
+            var 列表=e2Rex(分类[i],".json(url).ct(#)").match(/.*?\$.*?#/g);
+            var 标题=e2Rex(分类[i],".json(name)");
+            var 接口=e2Rex(分类[i],".json(parse_api)");
+            var LIST=[];
+            for (var j=0;j < 列表.length;j++){
+                var 选集=e2Rex(列表[j], ".tz($)");
+                if (列表[j].indexOf(".m3u8") != -1||列表[j].indexOf(".mp4") != -1||列表[j].indexOf("bilibili") != -1){
+                    if(列表[j].indexOf("4kyima.com")!=-1){
+                        var 选集地址=decodeURIComponent(e2Rex(列表[j], ".ty($).tz(#)"));
+                    }else{
+                        var 选集地址=e2Rex(列表[j], ".ty($).tz(#)");
+                    }
+                }else{
+                    var 选集地址=接口+e2Rex(列表[j], ".ty($).tz(#)");
+                }
+                LIST.push({title:选集, url:选集地址});
+            }
+            var play_ = {};
+            play_.title = 标题;
+            play_.list = LIST;
+            items.push(play_);
+        }
+        res.data = items;
+        JSON.stringify(res);
+    }else if(上级地址.indexOf("api.php/v1.vod")!=-1){
+        var 分类=JSON.parse(getVar("源码")).data.vod_play_list;
+        var res={};var items=[];
+        for(var i=0;i<分类.length;i++){
+            var CODE=JSON.stringify(分类[i]);
+            var 列表=e2Rex(CODE,".json(url).ct(#)").match(/.*?\$.*?#/g);
+            var 标题=e2Rex(CODE,".json(player_info).json(show)");
+            if(e2Rex(CODE,".json(player_info).json(parse2)").indexOf("=")!=-1){
+                var 接口="http:"+e2Rex(CODE,".json(player_info).json(parse2)").match(/\/\/.*?url=/)[0].replace("..",".");
+            }else if(e2Rex(CODE,".json(player_info).json(parse)").indexOf("=")!=-1){
+                var 接口="http:"+e2Rex(CODE,".json(player_info).json(parse)").match(/\/\/.*?url=/)[0].replace("..",".");
+            }else{
+                var 接口="";
+            }
+            var LIST=[];
+            for (var j=0;j < 列表.length;j++){
+                var 选集=e2Rex(列表[j], ".tz($)");
+                if (列表[j].indexOf(".m3u8")!=-1||列表[j].indexOf(".mp4")!=-1||列表[j].indexOf("bilibili") != -1){
+                    if(列表[j].indexOf("4kyima.com")!=-1){
+                        var 选集地址=decodeURIComponent(e2Rex(列表[j], ".ty($).tz(#)"));
+                    }else{
+                        var 选集地址=e2Rex(列表[j], ".ty($).tz(#)");
+                    }
+                }else{
+                    var 选集地址=接口+e2Rex(列表[j], ".ty($).tz(#)");
+                }
+                LIST.push({title:选集, url:选集地址});
+            }
+            var play_ = {};
+            play_.title = 标题;
+            play_.list = LIST;
+            items.push(play_);
+        }
+        res.data = items;
+        JSON.stringify(res);
+    }else if(上级地址.indexOf("api.php/provide/vod")!=-1){
+        var CODE=getVar("源码");
+        var 分类=e2Rex(CODE,".json(list).json(vod_play_url)").split("$$$");
+        var 线路=e2Rex(CODE,".json(list).json(vod_play_from)").split("$$$");
+        var res={};var items=[];
+        for(var i=0;i<分类.length;i++){
+            var 列表=分类[i].split("#");
+            var 标题=线路[i];
+            var LIST=[];
+            for (var j=0;j < 列表.length;j++){
+                var 选集=列表[j].split("$")[0];
+                var 地址=列表[j].split("$")[1];
+                if (地址.indexOf(".html")!=-1||地址.indexOf(".m3u8")!=-1||地址.indexOf(".mp4")!=-1||地址.indexOf("bilibili")!=-1||地址.indexOf(".zhenbuka")!=-1){
+                    if(地址.indexOf("4kyima.com")!=-1){
+                        var 选集地址=decodeURIComponent(地址);
+                    }else{
+                        var 选集地址=地址;
+                    }
+                }else if(地址.indexOf("alizy")!=-1){
+                    var 选集地址="https://jx.cqzyw.net:8655/analysis/index/?uid=58&token=gmsuvyzGMQTWXZ2346&url="+地址;
+                }else{
+                    var 选集地址="http://play.zk132.cn/m3u8.php?url="+地址;
+                }
+            LIST.push({title:选集, url:选集地址});
+            }
+            var play_ = {};
+            play_.title = 标题;
+            play_.list = LIST;
+            items.push(play_);
+        }
+        res.data = items;
+        JSON.stringify(res);
+    }else{
+        var CODE=getVar("源码");
+        var 分类=e2Rex(CODE,".json(videolist)").match(/".*?\]/g);
+        var res = {};var items = [];
+        for(var i=0;i<分类.length;i++){
+            var 列表=分类[i].match(/\{.*?\}/g);
+            var 标题=e2Rex(分类[i],".ty(\").tz(\")");
+            var LIST=[];
+            for (var j=0;j<列表.length;j++){
+                 var 选集=e2Rex(列表[j],".json(title)");
+                 var 选集地址=e2Rex(列表[j],".json(url)");
+                 LIST.push({title:选集,url:选集地址});
+            }
+            var play_ = {};
+            play_.title = 标题;
+            play_.list = LIST;
+            items.push(play_);
+        }
+        res.data = items;
+        JSON.stringify(res);
+    }

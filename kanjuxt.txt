@@ -1,0 +1,43 @@
+var loadurl=getVar("上级");
+var u=getVar("url");
+if(loadurl.indexOf("api.php/app")!=-1||loadurl.indexOf("api.php/v1.vod")!=-1){
+    if(u.indexOf(".m3u8")!=-1||u.indexOf(".mp4")!=-1){
+        JSON.stringify({url:u});
+    }else if(u.indexOf("bilibili")!=-1){
+        "web=https://jx.qianhaijishi.net/?url="+u;
+    }else{
+        var uu=u;
+        var resp=getHttp(JSON.stringify({url:uu}));
+        var uuu=JSON.parse(resp).url;
+        JSON.stringify({url:uuu});
+    }
+}else if(loadurl.indexOf("api.php/provide/vod")!=-1){
+    if(u.indexOf(".m3u8")!=-1||u.indexOf(".mp4")!=-1){
+        JSON.stringify({url:u});
+    }else if(u.indexOf("iqiyi.com")!=-1||u.indexOf("v.youku.com")!=-1||u.indexOf("v.qq.com")!=-1||u.indexOf("mgtv.com")!=-1||u.indexOf(".sohu.com")!=-1||u.indexOf(".le.com")!=-1||u.indexOf(".1905.com")!=-1||u.indexOf("v.pptv.com")!=-1){
+        var uu="http://vip.bdjx.vip:521/api/?key=7WGAqN6reu410HI0tJ&url="+u;
+        var resp=getHttp(JSON.stringify({url:uu}));
+        var uuu=JSON.parse(resp).url;
+        JSON.stringify({url:uuu});
+    }else if(u.indexOf(".zhenbuka")!=-1||u.indexOf("url=")!=-1){
+        "web="+u;
+    }else if(u.indexOf("bilibili")!=-1){
+        "web=https://jx.qianhaijishi.net/?url="+u;
+    }else if(u.indexOf("alizy")!=-1){
+        var uu="https://jx.cqzyw.net:8655/analysis/index/?uid=58&token=gmsuvyzGMQTWXZ2346&url="+u;
+        var resp=getHttp(JSON.stringify({url:uu}));
+        var uuu=JSON.parse(resp).url;
+        JSON.stringify({url:uuu});
+    }else{
+        var uu="http://play.zk132.cn/m3u8.php?url="+u;
+        var resp=getHttp(JSON.stringify({url:uu}));
+        var uuu=JSON.parse(resp).url;
+        JSON.stringify({url:uuu});
+    }
+}else{
+    if(u.indexOf(".m3u8")!=-1||u.indexOf(".mp4")!=-1){
+        JSON.stringify({url:u});
+    }else{
+        "web="+u;
+    }
+}
