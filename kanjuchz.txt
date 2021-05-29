@@ -1,10 +1,10 @@
 var 上级地址=getVar("url");
     if(上级地址.indexOf("api.php/app")!=-1){
-        var 分类=getVar("源码").match(/\{"name".*?\}/g);
+        var 分类=getVar("源码").match(/\{"code".*?\}/g);
         var res={};var items=[];
         for(var i=0;i<分类.length;i++){
             var 列表=e2Rex(分类[i],".json(url).ct(#)").match(/.*?\$.*?#/g);
-            var 标题=e2Rex(分类[i],".json(name)");
+            var 标题=e2Rex(分类[i],".json(code)");
             var 接口=e2Rex(分类[i],".json(parse_api)");
             var LIST=[];
             for (var j=0;j < 列表.length;j++){
