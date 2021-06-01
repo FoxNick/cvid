@@ -58,7 +58,16 @@
 		"type": "alizy",
 		"header": "",
 		"match": "",
-        "url": "http://jx.cqzyw.net:8654/analysis/index/?uid=73&token=adhjostvCDIMSW0459&url=",
+        "url": "http://jx.cqzyw.net:8655/analysis/index/?uid=73&token=adhjostvCDIMSW0459&url=",
+		"enable": true
+      },
+	 {
+        "name": "ALI",
+		"parser": "json",
+		"type": "alizy",
+		"header": "",
+		"match": "",
+        "url": "https://jx.cqzyw.net:8655/analysis/index/?uid=58&token=gmsuvyzGMQTWXZ2346&url=",
 		"enable": true
       },
 	 {
