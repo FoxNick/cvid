@@ -9,121 +9,136 @@
 	"parserjson": [
 	 {
         "name": "PARWIX",
-		"parserType": "json",
-		"webType": "mgtv,1905,iqiyi,youku,qq,bili,souhu",
+		"parser": "json",
+		"type": "mgtv,1905,iqiyi,youku,qq,bili,souhu",
 		"header": "",
+		"match": "",
         "url": "http://101.37.76.245:8183/zjn/parwx.php?v=",
 		"enable": true
       },
 	 {
         "name": "PARWIX1",
-		"parserType": "json",
-		"webType": "mgtv,1905,iqiyi,youku,qq,bili,souhu",
+		"parser": "json",
+		"type": "mgtv,1905,iqiyi,youku,qq,bili,souhu",
 		"header": "",
+		"match": "",
         "url": "https://vip.parwix.com:4433/analysis/json/?uid=360&my=efgkpquvwxAFGRUXY7&url=",
 		"enable": true
       },
 	 {
         "name": "PARWIX2",
-		"parserType": "json",
-		"webType": "mgtv,1905,iqiyi,youku,qq,bili,souhu",
+		"parser": "json",
+		"type": "mgtv,1905,iqiyi,youku,qq,bili,souhu",
 		"header": "",
+		"match": "",
         "url": "https://vip.parwix.com:4433/analysis/json/?uid=2206&my=dfklouvxEHOZ013579&url=",
 		"enable": true
       },
 	 {
         "name": "PARWIX",
-		"parserType": "json",
-		"webType": "mgtv,1905,iqiyi,youku,qq,bili,souhu",
+		"parser": "json",
+		"type": "mgtv,1905,iqiyi,youku,qq,bili,souhu",
 		"header": "",
+		"match": "",
         "url": "http://json.itono.cn/?url=",
 		"enable": true
       },
 	 {
         "name": "PARWIX",
-		"parserType": "json",
-		"webType": "mgtv,1905,iqiyi,youku,qq,bili,souhu,789pan",
+		"parser": "json",
+		"type": "mgtv,1905,iqiyi,youku,qq,bili,souhu,789pan",
 		"header": "",
+		"match": "",
         "url": "http://api.cxitco.cn/api/?key=930ys99g2M1crzLh7P&url=",
 		"enable": true
       },
 	 {
         "name": "789PAN",
-		"parserType": "json",
-		"webType": "789pan",
+		"parser": "json",
+		"type": "789pan",
 		"header": "",
+		"match": "",
         "url": "http://play.zk132.cn/m3u8.php?url=",
 		"enable": true
       },
 	 {
         "name": "ALI",
-		"parserType": "json",
-		"webType": "alizy",
+		"parser": "json",
+		"type": "alizy",
 		"header": "",
+		"match": "",
         "url": "http://jx.cqzyw.net:8654/analysis/index/?uid=73&token=adhjostvCDIMSW0459&url=",
 		"enable": true
       },
 	 {
         "name": "ZHUIJU",
-		"parserType": "json",
-		"webType": "alizy,iqiyi,qq,youku,1905,leshi,bili",
+		"parser": "json",
+		"type": "alizy,iqiyi,qq,youku,1905,leshi,bili",
 		"header": "",
+		"match": "",
         "url": "http://hhh.zjmao.org/jx.php?v=",
 		"enable": true
       },
 	 {
         "name": "M3U8",
-		"parserType": "json",
-		"webType": "mgtv,1905,iqiyi,youku,migu,fun,tudou,360kan",
+		"parser": "json",
+		"type": "mgtv,1905,iqiyi,youku,migu,fun,tudou,360kan",
 		"header": "",
+		"match": "",
         "url": "http://m3u8.tv.janan.net/json.php?url=",
 		"enable": true
       },
 	 {
         "name": "8090",
-		"parserType": "json",
-		"webType": "iqiyi,qq,youku,1905,migu,fun,360kan",
+		"parser": "json",
+		"type": "iqiyi,qq,youku,1905,migu,fun,360kan",
 		"header": "",
+		"match": "",
         "url": "https://8090.gdkaman.com/jiexi20210115/api.php@referer=&ref=0&time=1611808235&type=&other=&ios=&url=",
 		"enable": true
       },
 	 {
         "name": "CK",
-		"parserType": "json",
-		"webType": "iqiyi,qq,youku,1905,migu,fun,360kan",
+		"parser": "json",
+		"type": "iqiyi,qq,youku,1905,migu,fun,360kan",
 		"header": "",
+		"match": "",
         "url": "https://ckplayer.gdkaman.com/jiexi/api.php@referer=&ref=0&time=1611808235&type=&other=&ios=&url=",
 		"enable": true
       },
 	 {
         "name": "芒果",
-		"parserType": "json",
-		"webType": "mgtv",
+		"parser": "json",
+		"type": "mgtv",
 		"header": "",
+		"match": "",
         "url": "https://plamgtvcache.ccyjjd.com/mgtv20210115%60/api.php@referer=&ref=0&time=1611813966&type=&other=&ios=&url=",
 		"enable": true
       },
 	 {
         "name": "诺讯",
-		"parserType": "json",
-		"webType": "iqiyi,qq,youku,pptv,1905,tudou",
+		"parser": "json",
+		"type": "iqiyi,qq,youku,pptv,1905,tudou",
 		"header": "",
+		"match": "",
         "url": "https://yun.nxflv.com/Api.php@type=&wap=0&ios=0&vkey=@@@@&url=",
 		"enable": false
       },
 	 {
         "name": "椰子",
-		"parserType": "json",
-		"webType": "mgtv,iqiyi,qq,youku,1905,fun,bili,souhu",
-		"header": "(?<=urls = \").+(?=\")",
+		"parser": "json",
+		"type": "mgtv,iqiyi,qq,youku,1905,fun,bili,souhu",
+		"header": "",
+		"match": "(?<=urls = \").+(?=\")",
         "url": "https://jx.zgco.com.cn/?url=",
 		"enable": false
       },
 	 {
         "name": "思古2",
-		"parserType": "webview",
-		"webType": "iqiyi,qq,youku,pptv,1905,fun,wasu,leshi,migu,tudou",
+		"parser": "webview",
+		"type": "iqiyi,qq,youku,pptv,1905,fun,wasu,leshi,migu,tudou",
 		"header": "",
+		"match": "",
         "url": "@Header:{\"Referer\": \"https://api.sigujx.com\"}https://jx.sigujx.com/?url=",
 		"enable": false
       }
