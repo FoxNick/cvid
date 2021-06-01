@@ -17,15 +17,6 @@
 		"enable": true
       },
 	 {
-        "name": "PARWIX1",
-		"parser": "json",
-		"type": "mgtv,1905,iqiyi,youku,qq,bili,souhu",
-		"header": "",
-		"match": "",
-        "url": "https://vip.parwix.com:4433/analysis/json/?uid=360&my=efgkpquvwxAFGRUXY7&url=",
-		"enable": true
-      },
-	 {
         "name": "PARWIX2",
 		"parser": "json",
 		"type": "mgtv,1905,iqiyi,youku,qq,bili,souhu",
@@ -127,10 +118,19 @@
 	 {
         "name": "椰子",
 		"parser": "json",
-		"type": "mgtv,iqiyi,qq,youku,1905,fun,bili,souhu",
+		"type": "mgtv,iqiyi,qq,youku,1905,fun,bili,souhu,alizy",
 		"header": "",
-		"match": "(?<=urls = \").+(?=\")",
-        "url": "https://jx.zgco.com.cn/?url=",
+		"match": "(?<=urls = \")(.*?)(?=\")",
+        "url": "http://yingshi.waruanzy.com/jie/api.php?url=",
+		"enable": false
+      },
+	 {
+        "name": "椰子",
+		"parser": "json",
+		"type": "mgtv,iqiyi,qq,youku,1905,fun,bili,souhu,alizy",
+		"header": "",
+		"match": "(?<=url\": \")(.*?)(?=\")",
+        "url": "@Header:{\"Referer\": \"https://www.mgtv.com.leeleo.cn\"}https://www.mgtv.com.leeleo.cn/nmm/player/?url=",
 		"enable": false
       },
 	 {
