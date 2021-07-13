@@ -1,0 +1,28 @@
+var 分类=java.get('XCODE').match(/\{"name".*?\}/g);
+        var res={};var items=[];
+        for(var i=0;i<分类.length;i++){
+		var obj = JSON.parse(分类[i]);
+		var 列表=obj.url.split("#");
+		var 标题=obj.code;
+		var 接口=obj.parse_api;
+		var LIST=[];
+		for (var j=0;j < 列表.length;j++){
+		var 选集=列表[j].substring(0,列表[j].indexOf("$"));
+		if (列表[j].indexOf(".m3u8") != -1||列表[j].indexOf(".mp4") != -1||列表[j].indexOf("bilibili") != -1){
+		if(列表[j].indexOf("4kyima.com")!=-1){
+		var 选集地址=decodeURIComponent(列表[j].substring(列表[j].indexOf("$")+1,列表[j].length));
+		}else{
+		var 选集地址=列表[j].substring(列表[j].indexOf("$")+1,列表[j].length);
+		}
+		}else{
+		var 选集地址=接口+列表[j].substring(列表[j].indexOf("$")+1,列表[j].length);
+		}
+		LIST.push({title:选集, url:选集地址});
+		}
+		var play = {};
+		play.title = 标题;
+		play.list = LIST;
+		items.push(play);
+        }
+        res.data = items;
+        return JSON.stringify(res);
