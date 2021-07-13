@@ -1,4 +1,4 @@
-var 分类=java.get('CODE').match(/\{"name".*?\}/g);
+(()=>{var 分类=java.get('CODE').match(/\{"name".*?\}/g);
         var res={};var items=[];
         for(var i=0;i<分类.length;i++){
 		var obj = JSON.parse(分类[i]);
@@ -25,4 +25,4 @@ var 分类=java.get('CODE').match(/\{"name".*?\}/g);
 		items.push(play);
         }
         res.data = items;
-        return JSON.stringify(res);
+        return JSON.stringify(res);})()
